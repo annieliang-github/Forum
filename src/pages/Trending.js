@@ -4,17 +4,16 @@ import ProductList from "../components/Product/ProductList";
 import SmallHeader from "../components/Header/SmallHeader";
 import LargeHeader from "../components/Header/LargeHeader";
 
-const Home = (props) => {
+const Trending = (props) => {
   return (
     <IonPage>
-      <SmallHeader title="Hunt" />
-      <IonContent color="medium" fullscreen>
-        <LargeHeader title="Hunt" />
-        <br></br>
+      <SmallHeader title="Trending" />
+      <IonContent>
+        <LargeHeader title="Trending" />
         <ProductList location={props.location} />
       </IonContent>
     </IonPage>
   );
 };
 
-export default Home;
+export default Trending;
