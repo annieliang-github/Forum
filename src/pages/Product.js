@@ -1,5 +1,11 @@
 import React from "react";
-import { IonPage, IonContent, IonGrid, IonRow, IonCol } from "@ionic/react";
+import {
+  IonPage,
+  IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
+} from "@ionic/react";
 import { closeCircleOutline } from "ionicons/icons";
 
 import firebase from "../firebase";

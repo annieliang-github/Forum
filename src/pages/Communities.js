@@ -1,22 +1,19 @@
 import React from "react";
-import {
-  IonContent,
-  IonPage,
-} from "@ionic/react";
-
+import { IonContent, IonPage } from "@ionic/react";
+import ProductList from "../components/Product/ProductList";
 import SmallHeader from "../components/Header/SmallHeader";
 import LargeHeader from "../components/Header/LargeHeader";
 
-const Communities = () => {
+const Community = (props) => {
   return (
     <IonPage>
       <SmallHeader title="Communities" />
-      <IonContent fullscreen>
+      <IonContent>
         <LargeHeader title="Communities" />
+        <ProductList location={props.location} />
       </IonContent>
-      
     </IonPage>
   );
 };
 
-export default Communities;
+export default Community;

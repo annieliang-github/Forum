@@ -21,17 +21,17 @@ import {
 } from "ionicons/icons";
 
 import Home from "./pages/Home";
-import Communities from "./pages/Communities";
+import Community from "./pages/Communities";
 import Submit from "./pages/Submit";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
+import Product from "./pages/Product";
 import EditProfile from "./pages/EditProfile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Forgot from "./pages/Forgot";
 import useAuth from "./hooks/useAuth";
 import UserContext from "./contexts/UserContext";
-
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -52,6 +52,7 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 
+
 const App = () => {
   const [user, setUser] = useAuth();
   return (
@@ -66,7 +67,7 @@ const App = () => {
                 exact={true}
               />
               <Route path="/home" component={Home} />
-              <Route path="/communities" component={Communities} />
+              <Route path="/trending" component={Community} />
               <Route path="/submit" component={Submit} />
               <Route path="/search" component={Search} />
               <Route path="/profile" component={Profile} />
@@ -74,10 +75,11 @@ const App = () => {
               <Route path="/register" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot" component={Forgot} />
+              <Route path="/product/:productId" component={Product} />
               <Route component={() => <Redirect to="/home" />} />
             </IonRouterOutlet>
             <IonTabBar slot="bottom">
-              <IonTabButton tab="home" href="/home">
+            <IonTabButton tab="home" href="/home">
                 <IonIcon icon={homeOutline} />
                 <IonLabel>Forum</IonLabel>
               </IonTabButton>
@@ -99,7 +101,7 @@ const App = () => {
               </IonTabButton>
             </IonTabBar>
           </IonTabs>
-          </UserContext.Provider>
+        </UserContext.Provider>
       </IonReactRouter>
     </IonApp>
   );
