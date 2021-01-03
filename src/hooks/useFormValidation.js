@@ -22,9 +22,9 @@ function useFormValidation(initialState, validate, action) {
   }, [errors]);
 
   function handleChange(event) {
-    setValues((previousValues) => ({
+    setValues(previousValues => ({
       ...previousValues,
-      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.value
     }));
   }
 
@@ -39,7 +39,7 @@ function useFormValidation(initialState, validate, action) {
     handleChange,
     values,
     setValues,
-    isSubmitting,
+    isSubmitting
   };
 }
 

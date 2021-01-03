@@ -11,19 +11,22 @@ import {
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import {
-  listCircleOutline,
+  
   searchOutline,
   personCircleOutline,
-  createOutline,
-  trendingUpOutline,
+  homeOutline,
+  addCircleOutline,
+  appsOutline
+
 } from "ionicons/icons";
+
 import Home from "./pages/Home";
 import Trending from "./pages/Trending";
 import Submit from "./pages/Submit";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
-import EditProfile from "./pages/EditProfile";
 import Product from "./pages/Product";
+import EditProfile from "./pages/EditProfile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Forgot from "./pages/Forgot";
@@ -49,6 +52,7 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 
+
 const App = () => {
   const [user, setUser] = useAuth();
   return (
@@ -67,7 +71,7 @@ const App = () => {
               <Route path="/submit" component={Submit} />
               <Route path="/search" component={Search} />
               <Route path="/profile" component={Profile} />
-              <Route path="/edit-profile" component={EditProfile} />
+              <Route path="/editProfile" component={EditProfile} />
               <Route path="/register" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot" component={Forgot} />
@@ -75,16 +79,16 @@ const App = () => {
               <Route component={() => <Redirect to="/home" />} />
             </IonRouterOutlet>
             <IonTabBar slot="bottom">
-              <IonTabButton tab="home" href="/home">
-                <IonIcon icon={listCircleOutline} />
-                <IonLabel>Hunt</IonLabel>
+            <IonTabButton tab="home" href="/home">
+                <IonIcon icon={homeOutline} />
+                <IonLabel>Forum</IonLabel>
               </IonTabButton>
               <IonTabButton tab="trending" href="/trending">
-                <IonIcon icon={trendingUpOutline} />
+                <IonIcon icon={appsOutline} />
                 <IonLabel>Trending</IonLabel>
               </IonTabButton>
               <IonTabButton tab="submit" href="/submit">
-                <IonIcon icon={createOutline} />
+                <IonIcon icon={addCircleOutline} />
                 <IonLabel>Submit</IonLabel>
               </IonTabButton>
               <IonTabButton tab="search" href="/search">

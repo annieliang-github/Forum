@@ -17,3 +17,4 @@ const Trending = (props) => {
 };
 
 export default Trending;
+
