@@ -1,10 +1,11 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyCnA2i0ZVeI4TG1n9UUDCpTCfbUebd1Ons",
-    authDomain: "reddit-cc7a3.firebaseapp.com",
-    projectId: "reddit-cc7a3",
-    storageBucket: "reddit-cc7a3.appspot.com",
-    messagingSenderId: "561639970209",
-    appId: "1:561639970209:web:890fd2d8b535ebc454e7e0"
-  };
+  apiKey: "AIzaSyC_gQiL1NuKrs8ED1jIhrknrJl2wMMNS8U",
+  authDomain: "hunt-documentation.firebaseapp.com",
+  databaseURL: "https://hunt-documentation.firebaseio.com",
+  projectId: "hunt-documentation",
+  storageBucket: "hunt-documentation.appspot.com",
+  messagingSenderId: "1034808362756",
+  appId: "1:1034808362756:web:fb171ac3b7cd73418b3251",
+};
 
-  export default firebaseConfig;
+export default firebaseConfig;

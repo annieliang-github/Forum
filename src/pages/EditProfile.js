@@ -1,32 +1,30 @@
 import React from "react";
 import {
-  IonContent,
-  IonItem,
   IonPage,
-  IonLabel,
-  IonInput,
+  IonContent,
   IonRow,
   IonCol,
   IonButton,
+  IonItem,
+  IonLabel,
+  IonInput,
   IonLoading,
 } from "@ionic/react";
-import NavHeader from "../components/Header/NavHeader";
-import { toast } from "../utils/toast";
+import firebase from "../firebase";
 import useFormValidation from "../hooks/useFormValidation";
 import validateEditProfile from "../components/Auth/validateEditProfile";
-import firebase from "../firebase";
 import UserContext from "../contexts/UserContext";
+import { toast } from "../utils/toast";
+import NavHeader from "../components/Header/NavHeader";
 
 const EditProfile = (props) => {
   const { user, setUser } = React.useContext(UserContext);
-
   const INITIAL_STATE = {
     name: user && user.displayName,
     email: user && user.email,
     newPassword: "",
     currentPassword: "",
   };
-
   const {
     handleSubmit,
     handleChange,
@@ -34,7 +32,6 @@ const EditProfile = (props) => {
     values,
     isSubmitting,
   } = useFormValidation(INITIAL_STATE, validateEditProfile, authenticateUser);
-
   const [busy, setBusy] = React.useState(false);
 
   async function reauthenticate(email, password) {
@@ -102,6 +99,7 @@ const EditProfile = (props) => {
             required
           ></IonInput>
         </IonItem>
+
         <IonItem lines="full">
           <IonLabel position="floating">Email</IonLabel>
           <IonInput
@@ -112,6 +110,7 @@ const EditProfile = (props) => {
             required
           ></IonInput>
         </IonItem>
+
         <IonItem lines="full">
           <IonLabel position="floating">New Password</IonLabel>
           <IonInput
@@ -121,6 +120,7 @@ const EditProfile = (props) => {
             onIonChange={handleChange}
           ></IonInput>
         </IonItem>
+
         <IonItem lines="full">
           <IonLabel position="floating">Current Password</IonLabel>
           <IonInput
@@ -128,8 +128,10 @@ const EditProfile = (props) => {
             type="password"
             value={values.currentPassword}
             onIonChange={handleChange}
+            required
           ></IonInput>
         </IonItem>
+
         <IonRow>
           <IonCol>
             <IonButton
